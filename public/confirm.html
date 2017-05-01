@@ -89,14 +89,14 @@ th {
 										</tr>
                                     </thead>
 									
-                                    <tbody ng-repeat="book in books track by $index" ng-if="!isEmpty(book) && book.id>1">
+                                    <tbody ng-repeat="book in books track by $index" ng-if="!isEmpty(book) && book.id>=1">
                                         <tr class="odd gradeX">
 										
 										<td>
 										<font color="black" ng-if="select($index,result)">
-										{{book.id+100}}</font>
+										{{book.id}}</font>
 										<font color="black" ng-if="!select($index,result)" >
-										{{book.id+100}}</font>
+										{{book.id}}</font>
 										</td>
 										<td>
 										<font color="black" ng-if="select($index,result)">

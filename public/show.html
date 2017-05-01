@@ -79,71 +79,67 @@ th {
             <div class="col-md-12">
              
 				
-				<ul ng-repeat="book in books track by $index" ng-if="!isEmpty(book)&& book.id==1" >
+				<div ng-if="books[0]!=null">
+			<h4>คุณ:
  			
-			คุณ
-			<font color="blue" ng-if="select($index,result)" >
- 			{{book.name}}	{{book.surname}}  
- 			</font>
-			
-			
- 			<font color="blue" ng-if="!select($index,result)">
- 			{{book.name}}	{{book.surname}}  
- 			</font> 				
+
+ 			{{books[0].name}}	{{books[0].surname}}	</h4>
+ 	
+ 		</div>	
 		    ได้ทำการยืนยันรายการยืมหนังสือดังต่อไปนี้
  		</ul><hr>
 				
 				</p>
 			<div style="text-align:right;" >	
-			<ul ng-repeat="book in books track by $index" ng-if="!isEmpty(book)&& book.id==1" >	
+			<ul >	
 			คุณได้ยืมหนังสิอ ในวันที่ :
  			<font color="orange" ng-if="select($index,result)" >
- 			{{book.DD}}/{{book.MM}}/{{book.YY}}	
+ 			{{books[0].DD}}/{{books[0].MM}}/{{books[0].YY}}	
  			</font>
  			<font color="orange" ng-if="!select($index,result)">
- 				{{book.DD}}/{{book.MM}}/{{book.YY}}	
+ 				{{books[0].DD}}/{{books[0].MM}}/{{books[0].YY}}	
  			</font> 				
 			
  		</ul>
 				
-		<ul ng-repeat="book in books track by $index" ng-if="!isEmpty(book)&& book.id==1" >
+		<ul >
 				
-		<div ng-if="book.DD==28">
+		<div ng-if="books[0].DD==28">
 		คุณต้องคืนหนังสือในวันที่:
  			<font color="red" ng-if="select($index,result)">
- 				{{31}}/{{book.MM}}/{{book.YY}}
+ 				{{31}}/{{books[0].MM}}/{{books[0].YY}}
  			</font>
  			<font color="red" ng-if="!select($index,result)">
- 				{{31}}/{{book.MM}}/{{book.YY}}
+ 				{{31}}/{{books[0].MM}}/{{books[0].YY}}
  			</font> 				
 		</div>
-		<div ng-if="(book.DD+3) > 31&& book.DD!=28 && book.MM ==12">
+		<div ng-if="(books[0].DD+3) > 31&& books[0].DD!=28 && books[0].MM ==12">
 		     คุณต้องคืนหนังสือในวันที่:
  			<font color="red" ng-if="select($index,result)">
- 				{{book.DD-31+3}}/{{book.MM+1-12}}/{{book.YY+1}}
+ 				{{books[0].DD-31+3}}/{{books[0].MM+1-12}}/{{books[0].YY+1}}
  			</font>
  			<font color="red" ng-if="!select($index,result)">
- 				{{book.DD-31+3}}/{{book.MM+1-12}}/{{book.YY+1}}	
+ 				{{books[0].DD-31+3}}/{{books[0].MM+1-12}}/{{books[0].YY+1}}	
  			</font> 
 			
 		</div>
-		<div ng-if="(book.DD+3) > 31&& book.DD!=28 && book.MM <12 ">
+		<div ng-if="(books[0].DD+3) > 31&& books[0].DD!=28 && books[0].MM <12 ">
 		     คุณต้องคืนหนังสือในวันที่:
  			<font color="red" ng-if="select($index,result)">
- 				{{book.DD-31+3}}/{{book.MM+1}}/{{book.YY}}	
+ 				{{books[0].DD-31+3}}/{{books[0].MM+1}}/{{books[0].YY}}	
  			</font>
  			<font color="red" ng-if="!select($index,result)">
- 				{{book.DD-31+3}}/{{book.MM+1}}/{{book.YY}}
+ 				{{books[0].DD-31+3}}/{{books[0].MM+1}}/{{books[0].YY}}
  			</font> 
 			
 		</div>
-		<div ng-if="(book.DD+3) < 31">
+		<div ng-if="(books[0].DD+3) < 31">
 		คุณต้องคืนหนังสือในวันที่:
  			<font color="red" ng-if="select($index,result)">
- 				{{book.DD+3}}/{{book.MM}}/{{book.YY}}
+ 				{{books[0].DD+3}}/{{books[0].MM}}/{{books[0].YY}}
  			</font>
  			<font color="red" ng-if="!select($index,result)">
- 				{{book.DD+3}}/{{book.MM}}/{{book.YY}}
+ 				{{books[0].DD+3}}/{{books[0].MM}}/{{books[0].YY}}
  			</font> 				
 		</div>
          		
@@ -163,14 +159,14 @@ th {
 										</tr>
                                     </thead>
 									
-                                    <tbody ng-repeat="book in books track by $index" ng-if="!isEmpty(book) && book.id>1">
+                                    <tbody ng-repeat="book in books track by $index" ng-if="!isEmpty(book) && book.id>=1">
                                         <tr class="odd gradeX">
 										
 										<td>
 										<font color="black" ng-if="select($index,result)">
-										{{book.id+100}}</font>
+										{{book.id}}</font>
 										<font color="black" ng-if="!select($index,result)" >
-										{{book.id+100}}</font>
+										{{book.id}}</font>
 										</td>
 										<td>
 										<font color="black" ng-if="select($index,result)">

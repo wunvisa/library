@@ -4,12 +4,12 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 
 			 
-var books =   [{}]
+var books =   []
+var user = 0;
+var bookIndex = 0;
 
-var bookIndex = 1;
 
-
-app.use(express.static('public')) 
+app.use(express.static('public_html')) 
 
 	  router.route('/books')
       .get(function(req,res){ 
@@ -18,6 +18,7 @@ app.use(express.static('public')) 
 	  .post(function(req, res) {
 	  var book = {};
       book.id = bookIndex++
+	  
 	  book.name_book = req.body.name_book;
 	  book.name = req.body.name;
 	  book.surname = req.body.surname;
@@ -35,11 +36,11 @@ router.route('/books/:book_id')
 	  .put(function(req, res) {
 	  var id = req.params.book_id
 	  books[id].name_book = req.body.name_book
-	  book.name = req.body.name;
-	  book.surname = req.body.surname;
-	  book.DD = req.body.DD;
-	  book.MM = req.body.MM;
-	  book.YY = req.body.YY;  
+	   books[id].name = req.body.name;
+	   books[id].surname = req.body.surname;
+	   books[id].DD = req.body.DD;
+	   books[id].MM = req.body.MM;
+	   books[id].YY = req.body.YY;  
 	  res.json(books[id])
 	  })
 	  
@@ -54,6 +55,6 @@ router.route('/books/:book_id')
 
 app.use('/api', bodyParser.json(), router);
 
-app.listen(80, function() {
+app.listen(50050, function() {
 console.log('web server is running')
 })

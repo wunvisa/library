@@ -88,14 +88,12 @@
 
 	<div ng-app="bookApp" ng-controller="BookCtrl">			
 	<div style="text-align:right;" >
-	<ul ng-repeat="book in books track by $index" ng-if="!isEmpty(book)&& book.id==1" >
+	<ul ng-if="books[0]!=null">
 		Your Name :		
- 			<font color="orange" ng-if="select($index,result)" >
- 			{{book.name}}	{{book.surname}}	
- 			</font>
- 			<font color="orange" ng-if="!select($index,result)">
- 				{{book.name}}	{{book.surname}}	
- 			</font> 				
+ 			<font color="orange" >
+
+ 			{{books[0].name}}	{{books[0].surname}}	
+ 			</font>			
 			
  		</ul>
 		<button type="submit"   class="btn btn-default" > <a href="confirm.html">confirm</a></button>
@@ -321,19 +319,19 @@
         <div class="item active">
          <div class="row">
         <div class="col-lg-4">
-           <img src="themes/assets/images/ก.jpg" width="250" height="300">
+           <img src="themes/assets/images/a1.jpg" width="250" height="300">
           <br><input type="radio" id="name" ng-model="addBook.name_book" value="ชีวจิต">ชีวจิต
 		  	  <p><a class="btn btn-default" href="#" role="button" ng-click="add()">Select &raquo;</a></p>
           
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-         <img src="themes/assets/images/ข.jpg" width="250" height="300">
+         <img src="themes/assets/images/a2.jpg" width="250" height="300">
           <br><input type="radio" id="name" ng-model="addBook.name_book" value="กุลสตรี">กุลสตรี
 		  	  <p><a class="btn btn-default" href="#" role="button" ng-click="add()">Select &raquo;</a></p>
           
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img src="themes/assets/images/ค.jpg" width="250" height="300">
+          <img src="themes/assets/images/a3.jpg" width="250" height="300">
           <br><input type="radio" id="name" ng-model="addBook.name_book" value="cheeze">cheeze
 		  	  <p><a class="btn btn-default" href="#" role="button" ng-click="add()">Select &raquo;</a></p>
           
@@ -344,13 +342,13 @@
         <div class="item">
          <div class="row">
         <div class="col-lg-4">
-          <img src="themes/assets/images/ด.jpg" width="250" height="300">
+          <img src="themes/assets/images/a4.jpg" width="250" height="300">
           <br><input type="radio" id="name" ng-model="addBook.name_book" value="Sweety">Sweety
 		  	  <p><a class="btn btn-default" href="#" role="button" ng-click="add()">Select &raquo;</a></p>
           
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img src="themes/assets/images/ป.jpg" width="250" height="300">
+          <img src="themes/assets/images/a5.jpg" width="250" height="300">
           <br><input type="radio" id="name" ng-model="addBook.name_book" value="BAZAAR">BAZAAR
 		  	  <p><a class="btn btn-default" href="#" role="button" ng-click="add()">Select &raquo;</a></p>
           
